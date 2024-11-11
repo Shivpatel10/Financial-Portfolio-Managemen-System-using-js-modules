@@ -1,6 +1,6 @@
 // Task 1: Create the Asset Module
 //Named exports
-export const assetList = [
+export const assets = [
     {id: 1, name: 'JPM', type: 'stock', price: 236.98, quantity: 50},
     {id: 2, name: 'BAC', type: 'stock', price: 45.13, quantity: 50},
     {id: 3, name: 'WFC', type: 'stock', price: 70.04, quantity: 50},
@@ -11,5 +11,5 @@ export const assetList = [
 ];
 
 export function getAssetById(id) { // function to get asset by its ID
-    return assetList.find(asset => asset.id === id);
+    return assets.find(asset => asset.id === id);
 }

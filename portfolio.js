@@ -1,9 +1,18 @@
 // Task 2: Create Portfolio Module
-import { assetList } from "./asset.js"; //Importing named exports from portfolio.js
+import { assets } from "./asset.js"; //Importing named exports from portfolio.js
 
-export function calculatePortfolio(assetList) { //function to sum the total value of portfolio
-    return assetList.reduce((totalValue, asset) => {
-        return totalValue + (asset.price * asset.quantity)
-    }, 0);
-};
+export function calculatePortfolioValue() { //function to sum the total value of portfolio
+    return assets.reduce((total, asset) => total + asset.price * asset.quantity, 0);
+}
 
+export function getPortfolioAllocation() {
+    const totalPortfolioValue = calculatePortfolioValue() //creating variable
+    
+    return assets.map(asset => {
+        const allocationPercentage = ((asset.price * asset.quantity) / totalPortfolioValue) * 100;
+        return {
+            name: asset.name,
+            allocation: Number(allocationPercentage.toFixed(2))
+        };
+    });
+}

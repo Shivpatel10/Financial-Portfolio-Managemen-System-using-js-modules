@@ -1,4 +1,7 @@
 // Task 4: Create the Main Application
+// Wrap the entire script in a DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", () => {
+
 import { calculatePortfolioValue, getPortfolioAllocation } from "./portfolio.js";
 import { Transaction } from "./transaction.js";
 
@@ -29,4 +32,6 @@ console.log(`\nUpdated Portfolio Value: $${totalPortfolioValue.toFixed(2)}`);
 console.log("Updated Portfolio Allocation:");
 getPortfolioAllocation().forEach(asset => {
     console.log(`Asset: ${asset.name}, Allocation: ${asset.allocation}%`);
+});
+
 });

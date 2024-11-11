@@ -1,4 +1,4 @@
-//Task 1: Create the Asset Module
+// Task 1: Create the Asset Module
 //Named exports
 export const assetList = [
     {id: 1, name: 'JPM', type: 'stock', price: 236.98, quantity: 50},
